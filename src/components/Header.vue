@@ -9,11 +9,5 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
-    height: 156px;
-    background-color: $dark-cyan;
-    background-image: url('../assets/images/bg-header-desktop.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}  
+@import '../assets/styles/_header.scss'; 
 </style>
