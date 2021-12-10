@@ -1,18 +1,18 @@
 <template>
-  <Header />
+  <AppHeader />
   <div class="main">
     <JobListing />
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import AppHeader from './components/AppHeader.vue'
 import JobListing from './components/JobListing.vue'
 
 export default {
   name: 'App',
   components: {
-    Header,
+    AppHeader,
     JobListing
   }
 }
