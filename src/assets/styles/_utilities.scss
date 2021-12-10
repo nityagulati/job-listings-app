@@ -1,0 +1,25 @@
+.callout {
+    color: $color--white;
+    text-align: center;
+    padding: 6px 8px;
+    font-weight: $font-weight-bold;
+    font-size: $font-xsm;
+    vertical-align: middle;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+
+    &--new {
+        background-color: $color--primary;
+    }
+
+    &--feat {
+        background-color: $color--black;
+    }
+}
+
+.dot {
+    font-weight: $font-weight-bold;
+}

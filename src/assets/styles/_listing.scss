@@ -1,0 +1,135 @@
+.job-card {
+    background-color: $color--white;
+    width: 90%;
+    height: auto;
+    margin: 50px auto;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: $font-sm;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    @include mq($width-xsm) {
+        padding: 24px;
+    }
+    @include mq($width-md) {
+        width: 80%;
+        padding: 32px 40px;
+    }
+    @include mq($width-lg) {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    & > * {
+        margin-bottom: 20px;
+
+        @include mq($width-lg) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// add left border to first two job cards
+div.job-card:nth-of-type(1), 
+div.job-card:nth-of-type(2) {
+    border-left: solid 5px $color--primary;
+}
+
+.job-card__logo {
+    margin-top: -2rem;
+    width: 48px;
+    height: 48px;
+
+    @include mq($width-xsm) {
+        margin-top: -3rem;
+        width: 25%;
+        height: auto;
+    }
+    @include mq($width-md) {
+        width: 88px;
+        height: 88px;
+        margin-top: -4rem;
+    }
+    @include mq($width-lg) {
+        margin-top: 0;
+        margin-right: 24px;
+    }
+}
+
+.job-card__info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: solid 1px $color--gray;
+
+    @include mq($width-md) {
+        border-bottom: none;
+    }
+
+    & > * {
+        margin-bottom: 15px;
+    }
+}
+
+.job-card__company {
+    color: $color--primary;
+
+    span {
+        margin-right: 8px;
+        
+        @include mq($width-md) {
+            margin-right: 10px;
+        }
+    }
+}
+
+.job-card__position {
+    font-weight: $font-weight-bold;
+    font-size: $font-base;
+}
+
+.job-card__details {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    color: $color--gray;
+
+    & > * {
+        margin-right: 2px;
+
+        @include mq($width-xxs) {
+            margin-right: 5px;
+        }
+    }
+}
+
+.job-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0;
+    width: 100%;
+
+    span {
+        background-color: $color--base;
+        color: $color--primary;
+        text-align: center;
+        padding: 8px;
+        margin-right: 16px;
+        margin-bottom: 16px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        cursor: pointer;
+    }
+}
