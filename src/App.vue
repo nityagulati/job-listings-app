@@ -1,18 +1,21 @@
 <template>
   <AppHeader />
-  <div class="main">
+  <FilterBar />
+  <main class="main">
     <JobListing />
-  </div>
+  </main>
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue'
+import FilterBar from './components/FilterBar.vue'
 import JobListing from './components/JobListing.vue'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
+    FilterBar,
     JobListing
   }
 }
