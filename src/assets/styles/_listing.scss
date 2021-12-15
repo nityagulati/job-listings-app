@@ -1,29 +1,20 @@
 .job-card {
-    background-color: $color--white;
-    width: 90%;
     height: auto;
     margin: 50px auto;
     padding: 14px;
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-size: $font-sm;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
 
     @include mq($width-xsm) {
         padding: 24px;
     }
     @include mq($width-md) {
-        width: 80%;
         padding: 32px 40px;
     }
     @include mq($width-lg) {
         flex-direction: row;
         align-items: center;
+        margin: 24px auto;
     }
 
     & > * {
@@ -33,12 +24,6 @@
             margin-bottom: 0;
         }
     }
-}
-
-// add left border to first two job cards
-div.job-card:nth-of-type(1), 
-div.job-card:nth-of-type(2) {
-    border-left: solid 5px $color--primary;
 }
 
 .job-card__logo {
@@ -118,6 +103,10 @@ div.job-card:nth-of-type(2) {
     margin-bottom: 0;
     width: 100%;
 
+    @include mq($width-md) {
+        flex-wrap: nowrap;
+    }
+
     span {
         background-color: $color--base;
         color: $color--primary;
@@ -132,4 +121,10 @@ div.job-card:nth-of-type(2) {
         -o-border-radius: 5px;
         cursor: pointer;
     }
+}
+
+// add left border to first two listings
+div.job-card:nth-of-type(1), 
+div.job-card:nth-of-type(2) {
+    border-left: solid 5px $color--primary;
 }
