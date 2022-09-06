@@ -1,9 +1,11 @@
 <template>
+<div>
   <AppHeader />
   <FilterBar />
   <main class="main">
     <JobListing />
   </main>
+</div>
 </template>
 
 <script>
