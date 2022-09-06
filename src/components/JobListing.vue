@@ -1,4 +1,5 @@
 <template>
+<div>
     <div class="job-card item-box" v-for="listing in listings" :key="listing.id">
         <img class="job-card__logo" :src="getLogo(listing.logo)" alt="company logo">
         <div class="job-card__info">
@@ -23,6 +24,7 @@
             <span v-for="(tool, index) in listing.tools" :key="index">{{tool}}</span>
         </div>
     </div>
+</div>
 </template>
 
 <script>
