@@ -23,33 +23,13 @@
             </div>
         </div>
         <div class="job-card__tags">
-            <span 
+            <span
               class="tag"
-              @click.stop="addTag(listing.role)"
+              v-for="tag in [listing.role, listing.level, ...listing.languages, ...listing.tools]"
+              :key="tag"
+              @click.stop="addTag(tag)"
             >
-              {{listing.role}}
-            </span>
-            <span 
-              class="tag"
-              @click.stop="addTag(listing.level)"
-            >
-              {{listing.level}}
-            </span>
-            <span 
-              class="tag"
-              @click.stop="addTag(language)" 
-              v-for="(language, index) in listing.languages" 
-              :key="index"
-            >
-              {{language}}
-            </span>
-            <span 
-              class="tag"
-              @click.stop="addTag(tool)" 
-              v-for="(tool, index) in listing.tools" 
-              :key="index"
-            >
-              {{tool}}
+              {{tag}}
             </span>
         </div>
     </div>
