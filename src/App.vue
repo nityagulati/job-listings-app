@@ -1,9 +1,9 @@
 <template>
 <div>
   <AppHeader />
-  <FilterBar :filterTags="filterTags" />
+  <FilterBar :filterTags="filterTags" @removeTag="removeTag" />
   <main class="main">
-    <JobListing :listings="listings" @getListings="getListings" />
+    <JobListing :listings="listings" @addTag="addTag" />
   </main>
 </div>
 </template>
@@ -31,18 +31,34 @@ export default {
   created() {
     this.listings = this.initialData.slice()
   },
+  computed: {
+    isListFiltered() {
+      return this.filterTags.length
+    }
+  },
   methods: {
-    getListings(tag) {
+    addTag(tag) {
       if(this.filterTags.indexOf(tag) == -1 ) {
         this.filterTags.push(tag)
       }
+    },
+    removeTag(index) {
+      this.filterTags.splice(index, 1)
+    },
+    getListings() {
+      this.listings = this.initialData.slice()
       let filteredListings = this.listings.filter((job) => {
         const tags = [job.level, job.role].concat(job.tools, job.languages)
         return this.filterTags.every(i => tags.includes(i))
       })
       this.listings = filteredListings
     },
-  }
+  },
+  watch: {
+    isListFiltered: function() {
+      this.getListings()
+    }
+  },
 }
 </script>
 

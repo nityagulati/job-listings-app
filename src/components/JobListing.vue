@@ -20,19 +20,19 @@
         <div class="job-card__tags">
             <span 
               class="tag"
-              @click.stop="getListings(listing.role)"
+              @click.stop="addTag(listing.role)"
             >
               {{listing.role}}
             </span>
             <span 
               class="tag"
-              @click.stop="getListings(listing.level)"
+              @click.stop="addTag(listing.level)"
             >
               {{listing.level}}
             </span>
             <span 
               class="tag"
-              @click.stop="getListings(language)" 
+              @click.stop="addTag(language)" 
               v-for="(language, index) in listing.languages" 
               :key="index"
             >
@@ -40,7 +40,7 @@
             </span>
             <span 
               class="tag"
-              @click.stop="getListings(tool)" 
+              @click.stop="addTag(tool)" 
               v-for="(tool, index) in listing.tools" 
               :key="index"
             >
@@ -54,7 +54,7 @@
 <script>
 export default {
     name: 'job-listing',
-    emit: ['getListings'],
+    emit: ['addTag'],
     props: {
         listings: Object,
     },
@@ -62,8 +62,8 @@ export default {
         getLogo: function(logo) {
             return require('@/assets/images/' + logo)
         },
-        getListings(tag) {
-            this.$emit('getListings', tag)
+        addTag(tag) {
+            this.$emit('addTag', tag)
         }
     },
 }

@@ -6,7 +6,8 @@
               v-for="(tag, index) in this.filterTags" 
               :key=index 
             >
-              {{tag}} 
+              {{tag}}
+              <span class="tag--close" @click.stop="removeTag(index)">X</span>
             </span>
         </div>
         <a href="" class="filter-clear">Clear</a>
@@ -16,8 +17,14 @@
 <script>
 export default {
     name: 'filter-bar',
+    emits: ['removeTag'],
     props: {
         filterTags: Array
+    },
+    methods: {
+        removeTag(index) {
+            return this.$emit('removeTag', index)
+        }
     }
 }
 </script>
@@ -43,6 +50,21 @@ export default {
 
 span.tag.filter-tag {
     cursor: default;
+    padding-right: 0;
+}
+
+.tag--close {
+    background: #5CA5A5;
+    color: #ffffff;
+    height: inherit;
+    padding: 8px;
+    border-radius: 0 4px 4px 0;
+    margin-left: 10px;
+    cursor: pointer;
+
+    &:hover {
+        background: #000000;
+    }
 }
      
 </style>
