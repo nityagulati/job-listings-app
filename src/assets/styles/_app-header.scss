@@ -1,7 +1,11 @@
 .header {
     height: 156px;
     background-color: $dark-cyan;
-    background-image: url('../assets/images/bg-header-desktop.svg');
+    background-image: url('../assets/images/bg-header-mobile.svg');
     background-repeat: no-repeat;
     background-size: cover;
-}  
+
+    @include mq($width-md) {
+        background-image: url('../assets/images/bg-header-desktop.svg')
+    }
+}
