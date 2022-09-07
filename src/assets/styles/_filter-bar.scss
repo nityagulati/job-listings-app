@@ -11,7 +11,7 @@
 }
 
 .filter-clear {
-    color: #5CA5A5;
+    color: $color--primary;
     font-size: 13px;
     cursor: pointer;
     text-decoration: underline;
@@ -29,8 +29,8 @@ span.tag.filter-tag {
 }
 
 .tag--close {
-    background: #5CA5A5;
-    color: #ffffff;
+    background: $color--primary;
+    color: $color--white;
     height: inherit;
     padding: 8px;
     border-radius: 0 4px 4px 0;
@@ -38,7 +38,7 @@ span.tag.filter-tag {
     cursor: pointer;
 
     &:hover {
-        background: #000000;
+        background: $color--black;
     }
 }
 

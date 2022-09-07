@@ -58,7 +58,7 @@ span.tag {
     cursor: pointer;
 
     &:hover {
-        background: #5ca5a5;
-        color: #ffffff;
+        background: $color--primary;
+        color: $color--white;
     }
 }
