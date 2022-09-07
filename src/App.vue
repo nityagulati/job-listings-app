@@ -1,7 +1,7 @@
 <template>
 <div>
   <AppHeader />
-  <FilterBar />
+  <FilterBar :filterTags="filterTags" />
   <main class="main">
     <JobListing :listings="listings" @getListings="getListings" />
   </main>

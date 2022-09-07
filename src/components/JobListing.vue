@@ -19,16 +19,19 @@
         </div>
         <div class="job-card__tags">
             <span 
+              class="tag"
               @click.stop="getListings(listing.role)"
             >
               {{listing.role}}
             </span>
             <span 
+              class="tag"
               @click.stop="getListings(listing.level)"
             >
               {{listing.level}}
             </span>
             <span 
+              class="tag"
               @click.stop="getListings(language)" 
               v-for="(language, index) in listing.languages" 
               :key="index"
@@ -36,6 +39,7 @@
               {{language}}
             </span>
             <span 
+              class="tag"
               @click.stop="getListings(tool)" 
               v-for="(tool, index) in listing.tools" 
               :key="index"

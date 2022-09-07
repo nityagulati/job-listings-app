@@ -106,21 +106,6 @@
     @include mq($width-md) {
         flex-wrap: nowrap;
     }
-
-    span {
-        background-color: $color--base;
-        color: $color--primary;
-        text-align: center;
-        padding: 8px;
-        margin-right: 16px;
-        margin-bottom: 16px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        cursor: pointer;
-    }
 }
 
 // add left border to first two listings
