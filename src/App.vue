@@ -1,7 +1,11 @@
 <template>
 <div>
   <AppHeader />
-  <FilterBar :filterTags="filterTags" @removeTag="removeTag" @clearFilters="clearFilters" />
+  <FilterBar 
+    :filterTags="filterTags" 
+    @removeTag="removeTag" 
+    @clearFilters="clearFilters" 
+  />
   <main class="main">
     <JobListing :listings="listings" @addTag="addTag" />
   </main>
