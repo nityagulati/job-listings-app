@@ -18,10 +18,30 @@
             </div>
         </div>
         <div class="job-card__tags">
-            <span>{{listing.role}}</span>
-            <span>{{listing.level}}</span>
-            <span v-for="(language, index) in listing.languages" :key="index">{{language}}</span>
-            <span v-for="(tool, index) in listing.tools" :key="index">{{tool}}</span>
+            <span 
+              @click.stop="getListings(listing.role)"
+            >
+              {{listing.role}}
+            </span>
+            <span 
+              @click.stop="getListings(listing.level)"
+            >
+              {{listing.level}}
+            </span>
+            <span 
+              @click.stop="getListings(language)" 
+              v-for="(language, index) in listing.languages" 
+              :key="index"
+            >
+              {{language}}
+            </span>
+            <span 
+              @click.stop="getListings(tool)" 
+              v-for="(tool, index) in listing.tools" 
+              :key="index"
+            >
+              {{tool}}
+            </span>
         </div>
     </div>
 </div>
@@ -30,12 +50,16 @@
 <script>
 export default {
     name: 'job-listing',
+    emit: ['getListings'],
     props: {
-        listings: Object
+        listings: Object,
     },
     methods: {
         getLogo: function(logo) {
             return require('@/assets/images/' + logo)
+        },
+        getListings(tag) {
+            this.$emit('getListings', tag)
         }
     },
 }

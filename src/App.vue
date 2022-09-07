@@ -3,7 +3,7 @@
   <AppHeader />
   <FilterBar />
   <main class="main">
-    <JobListing :listings="listings" />
+    <JobListing :listings="listings" @getListings="getListings" />
   </main>
 </div>
 </template>
@@ -23,14 +23,26 @@ export default {
   },
   data() {
     return {
-      initialData: json.listings,
+      initialData: Array.from(json.listings),
       listings: null,
-      tag: null
+      filterTags: []
     }
   },
-  beforeMount() {
+  created() {
     this.listings = this.initialData.slice()
   },
+  methods: {
+    getListings(tag) {
+      if(this.filterTags.indexOf(tag) == -1 ) {
+        this.filterTags.push(tag)
+      }
+      let filteredListings = this.listings.filter((job) => {
+        const tags = [job.level, job.role].concat(job.tools, job.languages)
+        return this.filterTags.every(i => tags.includes(i))
+      })
+      this.listings = filteredListings
+    },
+  }
 }
 </script>
 
