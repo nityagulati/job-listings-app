@@ -78,6 +78,11 @@
 .job-card__position {
     font-weight: $font-weight-bold;
     font-size: $font-base;
+    cursor: pointer;
+
+    &:hover {
+        color: $color--primary;
+    }
 }
 
 .job-card__details {
