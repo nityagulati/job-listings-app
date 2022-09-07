@@ -1,6 +1,11 @@
 <template>
 <div>
-    <div class="job-card item-box" v-for="listing in this.listings" :key="listing.id">
+    <div 
+      class="job-card item-box"
+      :class="listing.featured ? 'featured' : ''"
+      v-for="listing in this.listings" 
+      :key="listing.id"
+    >
         <img class="job-card__logo" :src="getLogo(listing.logo)" alt="company logo">
         <div class="job-card__info">
             <div class="job-card__company">

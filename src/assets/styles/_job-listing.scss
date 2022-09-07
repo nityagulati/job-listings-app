@@ -108,8 +108,7 @@
     }
 }
 
-// add left border to first two listings
-div.job-card:nth-of-type(1), 
-div.job-card:nth-of-type(2) {
+// add left border to featured listings
+.featured {
     border-left: solid 5px $color--primary;
 }
