@@ -34,6 +34,7 @@ export default {
   },
   created() {
     this.listings = this.initialData.slice()
+    this.sortListings()
   },
   computed: {
     isListFiltered() {
@@ -56,6 +57,10 @@ export default {
         return this.filterTags.every(i => tags.includes(i))
       })
       this.listings = filteredListings
+      this.sortListings()
+    },
+    sortListings() {
+      this.listings.sort((a, b) => b.featured - a.featured || b.new - a.new)
     },
     clearFilters() {
       this.filterTags = []
