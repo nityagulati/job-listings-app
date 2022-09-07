@@ -9,5 +9,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/styles/_header.scss'; 
+@import '../assets/styles/_app-header.scss'; 
 </style>
