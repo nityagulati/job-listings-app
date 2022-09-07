@@ -10,3 +10,11 @@ body {
     font-size: $font-base;
     font-weight: $font-weight-base;
 }
+
+.main {
+    margin-top: 75px;
+
+    &.filtered {
+        margin-top: 40px;
+    }
+}

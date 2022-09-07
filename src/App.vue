@@ -2,11 +2,12 @@
 <div>
   <AppHeader />
   <FilterBar 
+    v-show="isListFiltered"
     :filterTags="filterTags" 
     @removeTag="removeTag" 
     @clearFilters="clearFilters" 
   />
-  <main class="main">
+  <main class="main" :class="{filtered: isListFiltered}">
     <JobListing :listings="listings" @addTag="addTag" />
   </main>
 </div>
