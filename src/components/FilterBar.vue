@@ -10,20 +10,23 @@
               <span class="tag--close" @click.stop="removeTag(index)">X</span>
             </span>
         </div>
-        <a href="" class="filter-clear">Clear</a>
+        <span class="filter-clear" @click.stop="clearFilters">Clear</span>
     </div>
 </template>
 
 <script>
 export default {
     name: 'filter-bar',
-    emits: ['removeTag'],
+    emits: ['removeTag', 'clearFilters'],
     props: {
         filterTags: Array
     },
     methods: {
         removeTag(index) {
             return this.$emit('removeTag', index)
+        },
+        clearFilters() {
+            return this.$emit('clearFilters')
         }
     }
 }
@@ -46,6 +49,7 @@ export default {
     color: #5CA5A5;
     font-size: 13px;
     cursor: pointer;
+    text-decoration: underline;
 }
 
 span.tag.filter-tag {

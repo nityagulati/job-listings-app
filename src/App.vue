@@ -1,7 +1,7 @@
 <template>
 <div>
   <AppHeader />
-  <FilterBar :filterTags="filterTags" @removeTag="removeTag" />
+  <FilterBar :filterTags="filterTags" @removeTag="removeTag" @clearFilters="clearFilters" />
   <main class="main">
     <JobListing :listings="listings" @addTag="addTag" />
   </main>
@@ -53,6 +53,9 @@ export default {
       })
       this.listings = filteredListings
     },
+    clearFilters() {
+      this.filterTags = []
+    }
   },
   watch: {
     isListFiltered: function() {
