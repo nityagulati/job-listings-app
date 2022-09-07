@@ -56,4 +56,9 @@ span.tag {
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     cursor: pointer;
+
+    &:hover {
+        background: #5ca5a5;
+        color: #ffffff;
+    }
 }

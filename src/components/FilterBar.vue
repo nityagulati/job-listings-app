@@ -55,6 +55,11 @@ export default {
 span.tag.filter-tag {
     cursor: default;
     padding-right: 0;
+
+    &:hover {
+        background: $color--base;
+        color: $color--primary;
+    }
 }
 
 .tag--close {
@@ -70,5 +75,4 @@ span.tag.filter-tag {
         background: #000000;
     }
 }
-     
 </style>
