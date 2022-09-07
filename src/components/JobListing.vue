@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="job-card item-box" v-for="listing in listings" :key="listing.id">
+    <div class="job-card item-box" v-for="listing in this.listings" :key="listing.id">
         <img class="job-card__logo" :src="getLogo(listing.logo)" alt="company logo">
         <div class="job-card__info">
             <div class="job-card__company">
@@ -28,14 +28,10 @@
 </template>
 
 <script>
-import json from "@/assets/files/listings.json"
-
 export default {
-    name: 'job-listing',   
-    data() {
-        return {
-            listings: json.listings,
-        }
+    name: 'job-listing',
+    props: {
+        listings: Object
     },
     methods: {
         getLogo: function(logo) {
