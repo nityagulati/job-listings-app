@@ -25,6 +25,7 @@
         <div class="job-card__tags">
             <span
               class="tag"
+              :class="{active: isTagActive(tag)}"
               v-for="tag in [listing.role, listing.level, ...listing.languages, ...listing.tools]"
               :key="tag"
               @click.stop="addTag(tag)"
@@ -42,6 +43,7 @@ export default {
     emit: ['addTag'],
     props: {
         listings: Object,
+        filterTags: Array
     },
     methods: {
         getLogo: function(logo) {
@@ -49,6 +51,9 @@ export default {
         },
         addTag(tag) {
             this.$emit('addTag', tag)
+        },
+        isTagActive(tag) {
+            return this.filterTags.includes(tag)
         }
     },
 }

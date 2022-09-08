@@ -59,4 +59,10 @@ span.tag {
         background: $color--primary;
         color: $color--white;
     }
+
+    &.active {
+        pointer-events: none;
+        background-color: $color--primary;
+        color: $color--white;
+    }
 }

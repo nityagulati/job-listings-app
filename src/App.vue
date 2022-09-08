@@ -8,7 +8,7 @@
     @clearFilters="clearFilters" 
   />
   <main class="main" :class="{filtered: isListFiltered}">
-    <JobListing :listings="listings" @addTag="addTag" />
+    <JobListing :listings="listings" @addTag="addTag" :filterTags="filterTags" />
   </main>
 </div>
 </template>
