@@ -34,8 +34,8 @@ Your users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/social-proof-section-vuejs-N1OVhaqCz)
-- Live Site URL: [Social Proof Section](https://nityagulati.github.io/social-proof-section/)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/job-listings-app-vue-noHge5pnm_)
+- Live Site URL: [Job Listings App](https://nityagulati.github.io/job-listings-app/)
 
 ## My process
 
